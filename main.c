@@ -75,7 +75,7 @@ int                 main(void)
     if (farm->path && !farm->error)
         print_path(farm);
     else
-		ft_putendl("\nERROR");
+		ft_putendl("ERROR");
 	ft_free_all(farm);
     return (0);
 }

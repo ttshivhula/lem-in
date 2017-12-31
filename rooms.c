@@ -6,7 +6,7 @@
 /*   By: ttshivhu <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/31 13:55:28 by ttshivhu          #+#    #+#             */
-/*   Updated: 2017/12/31 16:52:44 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2017/12/31 17:31:51 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int					add_neighbour(t_room *r1, t_room *r2)
 {
     if (r1 == NULL || r2 == NULL)
         return (-1);
-    if (strcmp(r1->name, r2->name) == 0)
+    if (ft_strcmp(r1->name, r2->name) == 0)
         return (-1);
     connect_rooms(&r1, &r2);
     connect_rooms(&r2, &r1);
@@ -93,7 +93,7 @@ t_room				*get_room(t_room *rooms, char *room)
 {
     while (rooms != NULL)
     {
-        if (strcmp(rooms->name, room) == 0)
+        if (ft_strcmp(rooms->name, room) == 0)
             return rooms;
         rooms = rooms->next;
     }
