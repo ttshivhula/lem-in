@@ -6,11 +6,19 @@
 /*   By: ttshivhu <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/31 13:26:51 by ttshivhu          #+#    #+#             */
-/*   Updated: 2017/12/31 17:05:08 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2017/12/31 18:02:48 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
+
+/*
+** While the queue isn’t empty … grabs the first room off the queue, mark as
+** searched, Check whether the room is a final room, if yes we constract the 
+** path and break out of the loop... if not then  we add all the non searched
+** neigbours to the queue and repeat the loop... if the queue is empty before
+** we reach the final room then there is no possible solution.
+*/
 
 void			bfs(t_farm *farm)
 {
