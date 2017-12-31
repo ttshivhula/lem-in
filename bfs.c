@@ -6,7 +6,7 @@
 /*   By: ttshivhu <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/31 13:26:51 by ttshivhu          #+#    #+#             */
-/*   Updated: 2017/12/31 15:22:29 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2017/12/31 17:05:08 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void			bfs(t_farm *farm)
 	while (farm->queue != NULL)
 	{
 		farm->current = dequeue(&farm->queue);
-        if (strcmp(farm->current->name, farm->end) == 0)
+        if (ft_strcmp(farm->current->name, farm->end) == 0)
         {
             create_path(farm->current, &(farm->path));
             break ;
