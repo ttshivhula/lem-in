@@ -41,19 +41,16 @@ void		        hashtag(t_farm *farm, char *temp)
 
 int				contains_char(char *str, char c)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] == c)
+		if (*str == c)
 			return (1);
-		i++;
+		str++;
 	}
 	return (0);
 }
 
-static void			ft_free_all(t_farm *farm)
+static void			free_all(t_farm *farm)
 {
 	(farm->rooms) ? free_rooms(farm->rooms) : 0;
 	(farm->path) ? free_path(farm->path) : 0;
@@ -76,6 +73,6 @@ int                 main(void)
         print_path(farm);
     else
 		ft_putendl("ERROR");
-	ft_free_all(farm);
+	free_all(farm);
     return (0);
 }
