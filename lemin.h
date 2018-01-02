@@ -6,16 +6,13 @@
 /*   By: ttshivhu <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/31 13:27:17 by ttshivhu          #+#    #+#             */
-/*   Updated: 2018/01/02 15:31:38 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2018/01/02 16:10:23 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEMIN_H
 # define LEMIN_H
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
 # include "libft/libft.h"
 # define BUFF_SIZE 10
 
