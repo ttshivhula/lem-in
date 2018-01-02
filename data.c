@@ -6,7 +6,7 @@
 /*   By: ttshivhu <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/31 14:03:28 by ttshivhu          #+#    #+#             */
-/*   Updated: 2018/01/01 19:00:10 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2018/01/02 15:34:40 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ static	void	ants(t_farm *farm, char *temp)
 	farm->ants = ft_atoi(temp);
 	if (farm->ants <= 0)
 		farm->error = 1;
-    while (*temp && *temp != '#')
-    {
-        if (!ft_isdigit(*temp))
-        {
-            farm->error = 1;
-            break ;
-        }
-        temp++;
-    }
+	while (*temp && *temp != '#')
+	{
+		if (!ft_isdigit(*temp))
+		{
+			farm->error = 1;
+			break ;
+		}
+		temp++;
+	}
 }
 
 static	void	check_coord(t_farm *farm, char *x, char *y)

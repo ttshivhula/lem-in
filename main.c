@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ttshivhu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/01/02 15:21:51 by ttshivhu          #+#    #+#             */
+/*   Updated: 2018/01/02 15:24:21 by ttshivhu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lemin.h"
 
-static t_farm       *init_farm(void)
+static t_farm		*init_farm(void)
 {
-    t_farm *new;
+	t_farm *new;
 
-    new = (t_farm *)malloc(sizeof(t_farm));
-    new->error = 0;
-    new->ants = 0;
-    new->start = NULL;
-    new->path = NULL;
-    new->end = NULL;
-    new->rooms = NULL;
-    new->queue = NULL;
-    return new;
+	new = (t_farm *)malloc(sizeof(t_farm));
+	new->error = 0;
+	new->ants = 0;
+	new->start = NULL;
+	new->path = NULL;
+	new->end = NULL;
+	new->rooms = NULL;
+	new->queue = NULL;
+	return (new);
 }
 
-void		        hashtag(t_farm *farm, char *temp)
+void				hashtag(t_farm *farm, char *temp)
 {
 	char *tmp;
 
@@ -26,7 +38,6 @@ void		        hashtag(t_farm *farm, char *temp)
 			farm->error = 1;
 		get_next_line(0, &tmp);
 		check_room(farm, tmp, 0);
-
 	}
 	else if (ft_strcmp(temp, "##end") == 0)
 	{
@@ -39,7 +50,7 @@ void		        hashtag(t_farm *farm, char *temp)
 	(tmp) ? free(tmp) : 0;
 }
 
-int				contains_char(char *str, char c)
+int					contains_char(char *str, char c)
 {
 	while (*str)
 	{
@@ -60,19 +71,19 @@ static void			free_all(t_farm *farm)
 	free(farm);
 }
 
-int                 main(void)
+int					main(void)
 {
-    t_farm  *farm;
+	t_farm		*farm;
 
-    farm = init_farm();
-    get_data(farm);
-    if (!farm->error && farm->start && farm->end &&
-        (ft_strcmp(farm->start, farm->end) != 0))
-        bfs(farm);
-    if (farm->path && !farm->error)
-        print_path(farm);
-    else
+	farm = init_farm();
+	get_data(farm);
+	if (!farm->error && farm->start && farm->end &&
+			(ft_strcmp(farm->start, farm->end) != 0))
+		bfs(farm);
+	if (farm->path && !farm->error)
+		print_path(farm);
+	else
 		ft_putendl("ERROR");
 	free_all(farm);
-    return (0);
+	return (0);
 }

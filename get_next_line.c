@@ -6,13 +6,11 @@
 /*   By: ttshivhu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/14 11:28:19 by ttshivhu          #+#    #+#             */
-/*   Updated: 2017/08/14 14:12:54 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2018/01/02 15:33:04 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-
-# define BUFF_SIZE 500
+#include "lemin.h"
 
 static int		reader(const int fd, char **container)
 {

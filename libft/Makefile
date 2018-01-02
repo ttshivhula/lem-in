@@ -6,11 +6,11 @@
 #    By: ttshivhu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/31 12:28:51 by ttshivhu          #+#    #+#              #
-#    Updated: 2017/07/17 10:41:26 by ttshivhu         ###   ########.fr        #
+#    Updated: 2018/01/02 15:43:09 by ttshivhu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-pos = libft.a
+NAME = libft.a
 
 SRCS = ft_memset.c ft_bzero.c ft_memccpy.c ft_memcpy.c ft_memmove.c ft_memchr.c ft_memcmp.c \
 	   ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c ft_strncat.c \
@@ -27,17 +27,17 @@ FLAG = -Wall -Werror -Wextra
 
 OBJ = $(SRCS:.c=.o)
 
-all: $(pos)
+all: $(NAME)
 
-$(pos):
+$(NAME):
 	@gcc $(FLAG) -c $(SRCS)
-	@ar rc $(pos) $(OBJ)
-	@ranlib $(pos)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 clean:
 	@/bin/rm -f $(OBJ)
 
 fclean: clean
-	@/bin/rm -f $(pos)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
