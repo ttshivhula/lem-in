@@ -6,7 +6,7 @@
 /*   By: ttshivhu <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/31 13:50:47 by ttshivhu          #+#    #+#             */
-/*   Updated: 2018/01/02 15:20:19 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2018/01/02 15:50:03 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,23 @@ t_room		*dequeue(t_queue **q)
 	room = que->room;
 	free(que);
 	return (room);
+}
+
+char		*ignore_comments(char *ptr)
+{
+	char	*ret;
+	int		i;
+
+	i = 0;
+	ret = (ptr) ? (char *)malloc(sizeof(char) * (ft_strlen(ptr) + 1)) : NULL;
+	if (ptr)
+	{
+		while (ptr[i] && (ptr[i] != '#'))
+		{
+			ret[i] = ptr[i];
+			i++;
+		}
+		ret[i] = '\0';
+	}
+	return (ret);
 }

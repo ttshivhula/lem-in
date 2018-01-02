@@ -32,14 +32,14 @@ void				hashtag(t_farm *farm, char *temp)
 	char *tmp;
 
 	tmp = NULL;
-	if (ft_strcmp(temp, "##start") == 0)
+	if (ft_strncmp(temp, "##start", 7) == 0)
 	{
 		if (farm->start)
 			farm->error = 1;
 		get_next_line(0, &tmp);
 		check_room(farm, tmp, 0);
 	}
-	else if (ft_strcmp(temp, "##end") == 0)
+	else if (ft_strncmp(temp, "##end", 5) == 0)
 	{
 		if (farm->end)
 			farm->error = 1;

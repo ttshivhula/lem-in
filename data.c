@@ -47,8 +47,11 @@ static	void	check_coord(t_farm *farm, char *x, char *y)
 void			check_room(t_farm *farm, char *temp, int end)
 {
 	char **ptr;
+	char *test;
 
-	ptr = ft_strsplit(temp, ' ');
+	test = ignore_comments(temp);
+	ptr = ft_strsplit(test, ' ');
+	(test) ? free(test) : 0;
 	if (ptr[0] && ptr[1] && ptr[2] && !ptr[3])
 	{
 		if (ptr[0][0] == 'L')
@@ -70,8 +73,11 @@ static	void	join_rooms(t_farm *farm, char *temp)
 	char		**ptr;
 	t_room		*r1;
 	t_room		*r2;
+	char		*test;
 
-	ptr = ft_strsplit(temp, '-');
+	test = ignore_comments(temp);
+	ptr = ft_strsplit(test, '-');
+	(test) ? free(test) : 0;
 	if (ptr[0] && ptr[1] && !ptr[2])
 	{
 		if (ptr[0][0] == 'L')
